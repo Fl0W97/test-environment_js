@@ -65,7 +65,7 @@ function startQuiz ()
 
 // Function to check the user's answer
 function checkAnswer(userAnswer, correctAnswer) {
-    if (userAnswer && userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+    if (userAnswer && userAnswer === correctAnswer) {
         alert("Correct!");
         highscore++; // Increment score if the answer is correct
     } else {
