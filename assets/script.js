@@ -9,6 +9,7 @@ document.getElementById("questionbox").innerHTML = "What is the capital of " + r
 console.log("test connection"); */
 
 /* country-capital database as object */
+
 let allCountriesCapitals = {
     country: ['Germany', 'France', 'Poland', 'Italy', 'Spain', 'Belgium', 'Portugal', 'Austria', 'Netherlands'],
     capital: ['Berlin', 'Paris', 'Warsaw', 'Rome', 'Madrid', 'Brussels', 'Lissabon', 'Vienna', 'Amsterdam']
@@ -29,11 +30,11 @@ function shuffle(array) {
         array[randomIndex] = temp; // Assign the stored current element to the randomly selected index
     }
 
-    }
+}
 
-function startQuiz ()
+function startQuiz () {
 
-    // Shuffle the order of questions, take the CountiresCApital list index and shuffle the indices
+    // Shuffle the order of questions, take the CountiresCapital list index and shuffle the indices
     let shuffledIndexes = Array.from(Array(allCountriesCapitals.country.length).keys());
     shuffle(shuffledIndexes);
 
@@ -41,31 +42,39 @@ function startQuiz ()
     for (let i = 0; i < shuffledIndexes.length; i++) {
         let questionIndex = shuffledIndexes[i];
         let correctAnswer = allCountriesCapitals.capital[questionIndex];
-        let wrongAnswer1 = allCountriesCapitals.capital[questionIndex] + 1;
-        let wrongAnswer2 = allCountriesCapitals.capital[questionIndex] + 2;
+        // using the modulo operator % to wrap around to the beginning of the array if the index exceeds its length.
+        let wrongAnswer1 = allCountriesCapitals.capital[(questionIndex + 1) % allCountriesCapitals.capital.length];
+        let wrongAnswer2 = allCountriesCapitals.capital[(questionIndex + 2) % allCountriesCapitals.capital.length];
+        
 
         // Shuffle all answers (correct and wrong ones)
         let allAnswers = [correctAnswer, wrongAnswer1, wrongAnswer2];
         shuffle(allAnswers);
 
         // Show Question in relevant div
-        document.getElementById("questionbox").innerHTML = "What is the capital of " + ${allCountriesCapitals.country[questionIndex] + " ?";
+        document.getElementById("question").innerHTML = "What is the capital of " + allCountriesCapitals.country[questionIndex] + " ?";
 
         // provide input for answers in HTML
-        document.getElementById("answerbox1").innerHTML = ${allAnswers[0]};
-        document.getElementById("answerbox2").innerHTML = ${allAnswers[1]};
-        document.getElementById("answerbox3").innerHTML = ${allAnswers[2]};
-        
-        //Get answer
-        let userAnswer = ...
+        document.getElementById("answerbox1").innerHTML = allAnswers[0];
+        document.getElementById("answerbox2").innerHTML = allAnswers[1];
+        document.getElementById("answerbox3").innerHTML = allAnswers[2];
 
         // Check if the user's answer is correct
         checkAnswer(userAnswer, correctAnswer);
 }
 
+}
+
+function handleClick(event) {
+    // get user's answer
+    let userAnswer = event.target.textContent;
+    let correctAnswer = document.getElementById("question").innerHTML.split(" ").slice(-1)[0];
+    checkAnswer(userAnswer, correctAnswer);
+}
+
 // Function to check the user's answer
 function checkAnswer(userAnswer, correctAnswer) {
-    if (userAnswer && userAnswer === correctAnswer) {
+    if (userAnswer === correctAnswer) {
         alert("Correct!");
         highscore++; // Increment score if the answer is correct
     } else {
@@ -73,27 +82,31 @@ function checkAnswer(userAnswer, correctAnswer) {
     }
 }
 
+document.getElementById("answerbox1").onclick = handleClick;
+document.getElementById("answerbox2").onclick = handleClick;
+document.getElementById("answerbox3").onclick = handleClick;
+
 // Start the quiz when the page loads
 startQuiz();
 
 
 
-
-
-/*define country variable for quiz question*/
+/** 
+ * 
+/*define country variable for quiz question
 let quizCountry = allCountriesCapitals.country[Math.floor(Math.random() * allCountriesCapitals.country.length)]
 console.log(quizCountry);
 
 document.getElementById("questionbox").innerHTML = "What is the capital of " + quizCountry + " ?";
 
-/* define capital variables for quiz question, index tbd*/
+/* define capital variables for quiz question, index tbd
 let answerCapital = allCountriesCapitals.capital[]
 
-/* define random capitals for multiple choice */
+/* define random capitals for multiple choice 
 let randomCapital1 = allCountriesCapitals.capital[Math.floor(Math.random() * allCountriesCapitals.capital.length)]
 let randomCapital2 = allCountriesCapitals.capital[Math.floor(Math.random() * allCountriesCapitals.capital.length)]
 
-/* check random capitals if not positve define random capitals again*/
+/* check random capitals if not positve define random capitals again
 function checkRandomCapitals()
 if (randomCapital1 AND randomCapital2  != answerCapital) AND (randomCapital1 != randomCapital2) {
     return check
@@ -103,7 +116,7 @@ if (randomCapital1 AND randomCapital2  != answerCapital) AND (randomCapital1 != 
     checkRandomCapitals()
 }
 
-/* collect all 3 variables in a list and shuffle them */
+/* collect all 3 variables in a list and shuffle them
 answerList = [answerCapital, randomCapital1, randomCapital2];
 
 
@@ -127,3 +140,4 @@ if (selected === questions[currentQuestion].correct) {
   feedback.textContent = "Incorrect!.";
 
 }
+*/
