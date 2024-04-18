@@ -1,12 +1,12 @@
-/* test with array
+/* test with array */
 let allCountries = ['Germany', 'France', 'Poland', 'Italy', 'Spain', 'Belgium', 'Portugal', 'Austria', 'Netherlands']
 
 
 let randomCountry = allCountries[Math.floor(Math.random()*allCountries.length)]
 
-document.getElementById("questionbox").innerHTML = "What is the capital of " + randomCountry + " ?";
+document.getElementById("box_questions").innerHTML = "What is the capital of " + randomCountry + " ?";
 
-console.log("test connection"); */
+console.log("test connection");
 
 /* country-capital database as object */
 
@@ -34,7 +34,7 @@ function shuffle(array) {
 
 function startQuiz () {
 
-    // Shuffle the order of questions, take the CountiresCapital list index and shuffle the indices
+    // Shuffle the order of questions, take the CountriesCapital list index and shuffle the indices
     let shuffledIndexes = Array.from(Array(allCountriesCapitals.country.length).keys());
     shuffle(shuffledIndexes);
 
@@ -66,7 +66,7 @@ function startQuiz () {
 }
 
 function handleClick(event) {
-    // get user's answer
+    // get user's answer and check answer
     let userAnswer = event.target.textContent;
     let correctAnswer = document.getElementById("question").innerHTML.split(" ").slice(-1)[0];
     checkAnswer(userAnswer, correctAnswer);
@@ -80,7 +80,8 @@ function checkAnswer(userAnswer, correctAnswer) {
     } else {
         alert(`Incorrect! The correct answer is ${correctAnswer}`);
     }
-}
+    // Start the next question
+    startQuiz();
 
 document.getElementById("answerbox1").onclick = handleClick;
 document.getElementById("answerbox2").onclick = handleClick;

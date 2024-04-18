@@ -7,7 +7,7 @@
     <title>Document</title>
 
         <!-- Stylesheet -->
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <section class="section_style">
@@ -15,14 +15,18 @@
             <p class="question"></p>
         </div>
         <div id="box_answers">
-            <div class="answerbox1">answer left
+            <div id="answerbox1" onclick="handleClick(event)">answer left
             </div>
-            <div class="answerbox2">answer middle
+            <div id="answerbox2" onclick="handleClick(event)">answer middle
             </div>
-            <div class="answerbox3">answer right
+            <div id="answerbox3" onclick="handleClick(event)">answer right
+            </div>
+            <div id="answer">0
+            </div>
+            <div id="highscore">0
             </div>
         </div>
     </section>   
-    <script src="assets/script.js"></script>
+    <script src="assets/scripttest.js"></script>
 </body>
 </html>
