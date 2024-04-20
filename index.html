@@ -1,32 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=!, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <!-- Meta tags for search engines -->
+    <meta name="description" content="Quiz about European states and its capitals.">
+    <meta name="keywords" content="Europe, quiz, Quiz, questonaire, countries, European states, capital, city, EU">
 
-        <!-- Stylesheet -->
-        <link rel="stylesheet" href="assets/style.css">
+    <!-- Title -->
+    <title>Europe Quiz</title>
+
+    <!-- Favicon -->
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
+
 <body>
-    <section class="section_style">
-        <div id="box_questions">
-            <p class="question"></p>
-        </div>
-        <div id="box_answers">
-            <div id="answerbox1" onclick="handleClick(event)">answer left
+    <!-- logo, navigation -->
+    <header>
+        <a href="index.html" aria-label="Redicrection to index page (does not open in a new tab)">
+            <h1 id="logo">Europe Quiz<img src="" alt="" class=""></h1>
+        </a>
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="index.html" class="active">Quiz</a>
+                </li>
+                <li>
+                    <a href="highscore.html">Highscore</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main id="bg-euro-map">
+        <!-- intro, game set up -->
+        <section class="section_style">
+            <div>
+                <h2>
+                    Welcome, select the game mode to start
+                </h2>
+                <p>Start with Capital or Country</p>
+                <!-- switch -->
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <p>Multiple choice yes or no</p>
+                <!-- switch -->
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <!-- switch -->
+                <p>With joker yes or no</p>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
             </div>
-            <div id="answerbox2" onclick="handleClick(event)">answer middle
+        </section>
+
+        <!-- questions and answers -->
+        <section class="section_style">
+            <div id="box_questions">
+                <p class="question"></p>
             </div>
-            <div id="answerbox3" onclick="handleClick(event)">answer right
+            <div id="box_answers">
+                <div class="answer" id="box1">answer left
+                </div>
+                <div class="answer" id="box2">answer middle
+                </div>
+                <div class="answer" id="box3">answer right
+                </div>
             </div>
-            <div id="answer">0
+            <div id="feedbackForUser">answer right
             </div>
-            <div id="highscore">0
+            <div id="highscore">answer right
             </div>
-        </div>
-    </section>   
-    <script src="assets/scripttest.js"></script>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <ul class="social-networks">
+            <li>
+                <a href="https://www.linkedin.com/in/florian-guldner-4a684897/" target="_blank" rel="noopener"
+                    aria-label="Redicrection to Linkedin page (opens in a new tab)">
+                    <i class="fa-brands fa-linkedin" style="color:blue"></i></a>
+            </li>
+            <li>
+                <a href="https://github.com/Fl0W97" target="_blank" rel="noopener"
+                    aria-label="Redicrection to GitHub page (opens in a new tab)">
+                    <i class="fa-brands fa-square-github" style="color: blue"></i></a>
+            </li>
+        </ul>
+
+        <!-- Font Awesome kit -->
+        <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
+
+    </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>

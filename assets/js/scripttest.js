@@ -4,7 +4,7 @@ let allCountriesCapitals = {
 }
 
 // Initialize highscore
-let highscore = 0;
+const highscore = 0;
 
 
 // Generate a random index to select a country
