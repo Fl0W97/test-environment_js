@@ -187,6 +187,11 @@ main {
 }
 
 #box_answers {
+    
+}
+
+#game_settings {
+
 }
 
 .answer {
@@ -261,6 +266,13 @@ footer {
     }
 
     #box_answers {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+    }
+
+    #game_settings {
         flex-direction: row;
         display: flex;
         justify-content: space-around;

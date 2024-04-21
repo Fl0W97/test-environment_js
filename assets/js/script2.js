@@ -1,7 +1,7 @@
-/* country-capital database as object */
+/* country-capital database as object, first 20 */
 let allCountriesCapitals = {
-    country: ['Germany', 'France', 'Poland', 'Italy', 'Spain', 'Belgium', 'Portugal', 'Austria', 'the Netherlands'],
-    capital: ['Berlin', 'Paris', 'Warsaw', 'Rome', 'Madrid', 'Brussels', 'Lissabon', 'Vienna', 'Amsterdam']
+    country: ['Albania', 'Andorra', 'Austria', 'Belarus', 'Belgium', 'Bosnia and Herzegovina', 'Bulgaria', 'Croatia', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Georgia', 'Germany', 'Gibraltar (UK)', 'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Kosovo', 'Lativa', 'Liechtenstein', 'Lithuania', 'Lxembourg', 'Macedonia', 'Malta', 'Moldova', 'Monaco', 'Montenegro', 'Netherlands', 'Norway', 'Poland', 'Portugal', 'Romania', 'Russia', 'San Marino', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 'Turkey', 'Ukraine', 'United Kingdom', 'Vatican City'],
+    capital: ['Tirana', 'Andorra la Vella', 'Vienna', 'Minsk', 'Brussels', 'Sarajevo', 'Sofia', 'Zagreb', 'Nicosia', 'Prague', 'Copenhagen', 'Tallin', 'Helsinki', 'Paris', 'Tbilisi', 'Berlin', 'Gibraltar', 'Athens', 'Budapest', 'Reykjavik', 'Dublin', 'Rome', 'Pristina', 'Riga', 'Vaduz', 'Vulnius', 'Luxembourg city', 'Skopje', 'Valletta', 'Chisinau', 'Monaco', 'Podgorica', 'Amsterdam', 'Oslo' , 'Warsaw', 'Lisbon', 'Bucharest', 'Moscow', 'San Marino', 'Belgrade', 'Bratislava', 'Ljubljana', 'Madrid', 'Stockholm', 'Bern', 'Ankara', 'Kiev', 'London', 'Vatican City']
 };
 
 //Add highscore
@@ -25,6 +25,7 @@ let correctAnswer;
 
 // Function to generate a question
 function generateQuestion() {
+
     // Generate a random index to select a country
     let randomIndex = Math.floor(Math.random() * allCountriesCapitals.country.length);
 
