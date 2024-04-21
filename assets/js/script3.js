@@ -46,7 +46,7 @@ function generateQuestion() {
             temp_obj[allKeys[i]] = allCountriesCapitals[allKeys[i]]
         };
 
-    // Nest steps: 1. select a country randomly, 2. create 2 wrongAnswers random keys 3. define the list allAnswers
+    // Nest steps: 1. select a country randomly, 2. create 2 wrongAnswers random keys 3. define the list allAnswers - you can use indexing for objects like for arrays
 
    /* // Generate a random index to select a country
     let randomIndex = Math.floor(Math.random() * allCountriesCapitals.country.length);
