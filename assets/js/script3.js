@@ -1,14 +1,21 @@
 /* country-capital database as object, first 20 */
-let allCountriesCapitals = {
-    country: ['Albania', 'Andorra', 'Austria', 'Belarus', 'Belgium', 'Bosnia and Herzegovina', 'Bulgaria', 'Croatia', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Georgia', 'Germany', 'Gibraltar (UK)', 'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Kosovo', 'Lativa', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macedonia', 'Malta', 'Moldova', 'Monaco', 'Montenegro', 'Netherlands', 'Norway', 'Poland', 'Portugal', 'Romania', 'Russia', 'San Marino', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 'Turkey', 'Ukraine', 'United Kingdom', 'Vatican City'],
-    capital: ['Tirana', 'Andorra la Vella', 'Vienna', 'Minsk', 'Brussels', 'Sarajevo', 'Sofia', 'Zagreb', 'Nicosia', 'Prague', 'Copenhagen', 'Tallin', 'Helsinki', 'Paris', 'Tbilisi', 'Berlin', 'Gibraltar', 'Athens', 'Budapest', 'Reykjavik', 'Dublin', 'Rome', 'Pristina', 'Riga', 'Vaduz', 'Vulnius', 'Luxembourg city', 'Skopje', 'Valletta', 'Chisinau', 'Monaco', 'Podgorica', 'Amsterdam', 'Oslo' , 'Warsaw', 'Lisbon', 'Bucharest', 'Moscow', 'San Marino', 'Belgrade', 'Bratislava', 'Ljubljana', 'Madrid', 'Stockholm', 'Bern', 'Ankara', 'Kiev', 'London', 'Vatican City']
-};
-
-//Manage highscore
-let highscoreList = {
-    user: [],
-    highscore: []
+let allCountriesCapitals = [ 
+    {Albania: 'Tirana',
+    Andorra: 'Andorra la Vella',
+    Austria: 'Vienna',
+    Belarus: 'Minsk',
+    Belgium: 'Brussels',
+    Bosnia and Herzegovina: 'Sarajevo',
+    Bulgaria: 'Sofia',
+    Croatia: 'Zagreb',
+    Cyprus: 'Nicosia',
+    Czech Republic: 'Prague',
+    Denmark: 'Copenhagen'
 }
+
+/* , 'Estonia', 'Finland', 'France', 'Georgia', 'Germany', 'Gibraltar (UK)', 'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Kosovo', 'Lativa', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macedonia', 'Malta', 'Moldova', 'Monaco', 'Montenegro', 'Netherlands', 'Norway', 'Poland', 'Portugal', 'Romania', 'Russia', 'San Marino', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 'Turkey', 'Ukraine', 'United Kingdom', 'Vatican City'],
+    capital: [, , , , , , , , , , , 'Tallin', 'Helsinki', 'Paris', 'Tbilisi', 'Berlin', 'Gibraltar', 'Athens', 'Budapest', 'Reykjavik', 'Dublin', 'Rome', 'Pristina', 'Riga', 'Vaduz', 'Vulnius', 'Luxembourg city', 'Skopje', 'Valletta', 'Chisinau', 'Monaco', 'Podgorica', 'Amsterdam', 'Oslo' , 'Warsaw', 'Lisbon', 'Bucharest', 'Moscow', 'San Marino', 'Belgrade', 'Bratislava', 'Ljubljana', 'Madrid', 'Stockholm', 'Bern', 'Ankara', 'Kiev', 'London', 'Vatican City']
+}; */
 
 let highscore = 0;
 document.getElementById("highscore").innerHTML = "Highscore is: " + highscore;
@@ -30,8 +37,18 @@ let correctAnswer;
 
 // Function to generate a question
 function generateQuestion() {
+    
+    // shuffle the object allCountriesCapitals by suing keys, put them in an array, create an object again
+    let allKeys = allCountriesCapitals.keys()
+    shuffle(allKeys);
+    let temp_obj ={},
+        for (let i = 0; i < allKeys.lenght; i++) {
+            temp_obj[allKeys[i]] = allCountriesCapitals[allKeys[i]]
+        };
 
-    // Generate a random index to select a country
+    // Nest steps: 1. select a country randomly, 2. create 2 wrongAnswers random keys 3. define the list allAnswers
+
+   /* // Generate a random index to select a country
     let randomIndex = Math.floor(Math.random() * allCountriesCapitals.country.length);
 
     // Get the random country using the random index
@@ -45,6 +62,8 @@ function generateQuestion() {
     // using the modulo operator % to wrap around to the beginning of the array if the index exceeds its length
     let wrongAnswer1 = allCountriesCapitals.capital[(randomIndex + 1) % allCountriesCapitals.capital.length];
     let wrongAnswer2 = allCountriesCapitals.capital[(randomIndex + 2) % allCountriesCapitals.capital.length];
+    */
+
 
     let allAnswers = [correctAnswer, wrongAnswer1, wrongAnswer2];
 
@@ -85,11 +104,4 @@ let answerElements = document.getElementsByClassName("answer");
 // Loop through each answer element and add event listener to it
 for (let i = 0; i < answerElements.length; i++) {
     answerElements[i].addEventListener('click', clickAnswer);
-}
-
-// The game is over: Alert, add highscore to highscoreList
-function gameOver () {
-    alert('The game is over. Your highscore is '  + highscore)
-    highscoreList.user('Tom');
-    highscoreList.highscore(highscore);
 }
