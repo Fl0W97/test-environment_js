@@ -64,6 +64,7 @@ function clickAnswer(event) {
         document.getElementById("highscore").innerHTML = "Highscore is: " + highscore;
     } else {
         document.getElementById("feedbackForUser").innerHTML = "Incorrect! The correct answer is " + correctAnswer;
+        alert('The game is over. You highscore is '  + highscore)
     }
 
     generateQuestion(); // Generate a new question after each answer
