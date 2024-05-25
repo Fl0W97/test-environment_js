@@ -200,7 +200,7 @@ const CountriesCapitals = [{
 
 // user input relevant for modeTypeAnswer = userInput
 let userName = document.getElementById('username');
-let numberQuestions = document.getElementById('noOfQuestions').value;
+let numberQuestions = parseInt(document.getElementById('noOfQuestions').value, 10);
 let userInput;
 
 //boxes for hide/ display
@@ -209,7 +209,6 @@ let box_answers = document.getElementById("box_answers");
 // // Initialize variables/constants
 let index = 0; // Initialize index outside the function
 let modeTypeQuestion;
-let modeTypeAnswer;
 let wrongAnswer;
 let correctAnswer;
 let userAnswer;
@@ -221,15 +220,15 @@ const answer2 = document.getElementById("box2");
 const answer3 = document.getElementById("box3");
 
 // highscore
-const mostRecentScore = localStorage.getItem('mostRecentScroe');
+const mostRecentScore = localStorage.getItem('mostRecentScore');
 let highscore;
 
 // DOM load
 document.addEventListener("DOMContentLoaded", function() {
     
-    // Add event listener to the 'Start Quiz' button
-    const startQuizButton = document.getElementById('button');
-    startQuizButton.addEventListener('click', startQuiz);
+// Add event listener to the 'Start Quiz' button
+const startQuizButton = document.getElementById('button');
+startQuizButton.addEventListener('click', startQuiz);
 
     /* Add event listener to the 'Save Score' button
     const saveScoreButton = document.getElementById('SaveScoreBtn');
@@ -266,8 +265,8 @@ document.addEventListener("DOMContentLoaded", function() {
 function startQuiz() {
     index = 0;
     highscore = 0;
+    numberQuestions = parseInt(document.getElementById('noOfQuestions').value, 10); // Update number of questions here
 
-    document.getElementById('gameoverbox').style.visibility = 'hidden';
     document.getElementById('quiz_questions').style.visibility = 'inherit';
     document.getElementById('quiz_settings').style.visibility = 'hidden';
 
@@ -276,7 +275,7 @@ function startQuiz() {
 
     saveModeSettings();
     console.log(modeTypeQuestion);
-    console.log(modeTypeAnswer);
+
     console.log(numberQuestions);
 
     displayNextQuestion();
@@ -286,6 +285,14 @@ function startQuiz() {
 function clickAnswer(event) {
     const selectedAnswer = event.target.textContent;
     handleUserAnswer(selectedAnswer);
+}
+
+// Function to handle the user's answer
+function handleUserAnswer(answer) {
+    userAnswer = answer;
+    checkAnswer();
+    // After checking the answer, proceed to the next question
+    displayNextQuestion();
 }
 
 // Function to start the quiz
@@ -331,17 +338,9 @@ function displayNextQuestion() {
         console.log('display index:' + index);
         console.log('highscore:' + highscore);
     } else {
-        // No more questions left, end the game
+        // No more questions left, end of the game
         gameOver();
     }
-}
-
-// Function to handle the user's answer
-function handleUserAnswer(answer) {
-    userAnswer = answer;
-    checkAnswer();
-    // After checking the answer, proceed to the next question
-    displayNextQuestion();
 }
 
 // Function to handle the user's input
