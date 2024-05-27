@@ -1,10 +1,13 @@
 
+// DOM load
 document.addEventListener("DOMContentLoaded", function () {
+    // define username, score
     const usernameInput = document.getElementById('username');
     const saveScoreButton = document.getElementById('saveScoreBtn');
     const finalScore = document.getElementById('finalScore');
     const mostRecentScore = localStorage.getItem('mostRecentScore');
 
+    // create a list with score and name in local storage
     const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
     finalScore.innerText = mostRecentScore;
