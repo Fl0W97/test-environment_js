@@ -35,21 +35,23 @@ Header
 <img src="" alt="image shows header">
 
 ### quiz.html
-The landing page contains a short introduction, the game settings and the first question of the quiz.
+The landing page contains a short introduction, the game settings and after submitting the questions are displayed.
+THe number of questions can be selected. In addition, the user can choose whether he wants to be asked for the country or the capital.
+
 
 quiz.html
 <img src="" alt="">
 
 ### highscore.html
+The highscore is counted after each answer. In addition, the highscore is storaged in local storage and listed after the game in the highscore list overview.
 
-
-highscroe.html
+highscore.html
 <img src="" alt="">
 
-### about.html
+### end.html
 
 
-about.html
+end.html
 <img src="" alt="">
 
 
