@@ -187,12 +187,21 @@ main {
     font-weight: bold;
 }
 
-#box_answers {
-
+.btn {
+    margin: auto;
+    width: 50%;
+    background-color: #fce89a;
+    padding: 10px;
+    border: 3px solid #dcccb2;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-#game_settings {
-
+.btn:hover {
+    border: 3px solid #0f9d58;
+    font-size: 110%;
+    font-weight: bold;
 }
 
 .answer {

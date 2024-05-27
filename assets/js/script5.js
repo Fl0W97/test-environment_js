@@ -81,6 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const startQuizButton = document.getElementById('button');
     startQuizButton.addEventListener('click', startQuiz);
 
+    document.getElementById('quiz_questions').style.visibility = 'hidden';
+
     // Add event listeners to multiple choice answer options
     const answerElements = document.getElementsByClassName("answer");
     for (let i = 0; i < answerElements.length; i++) {
@@ -245,6 +247,7 @@ function checkAnswer() {
 function gameOver() {
     console.log('highscore is: ' + highscore);
     alert('The game is over. Your highscore is: ' + highscore);
+    localStorage.setItem("mostRecentScore", highscore);
     window.location.replace('/end.html');
 }
 
