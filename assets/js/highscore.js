@@ -21,3 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
     createList();
     
 });
+
+/*
+1. create an additional array
+2. add the new value to the array
+3. resort the array
+
+4. once the array has more than 10 values
+Check if the new score is greater than the lowest value:
+  If yes, pop the lowest value out of the arraw and add the new value in the array. 
+  If no, don't add the value to the array.
+  Resort array.
+
+*/

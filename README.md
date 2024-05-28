@@ -251,17 +251,25 @@ Here the live link: https://fl0w97.github.io/CI_p1_meditation-_website/index.htm
 
 #OPEN toDOs
 
-- end of the game? --> add function if index > numberOfCountries --> shuffle again and continue with the questions
-- sort highscore results, highest highscore at the top --> ?
-- add countdown --> see function countdown
-- add time counter for total result
-- add time to highscore (3. line) --> return [item.name, item.score, item.time].join(" ");
-- minimize user problems --> big, small capital, data isses
-- improve code quality --> ??
-- show steps in console console.log --> a sign of good or low quality!?
-- adjust css design --> 
-- optimize user flow --> add 3Sec. between questions: setTimeout('', 3000);
-- explain limitation of local storage
+- end of the game? --> add function if index > numberOfCountries --> shuffle again and continue with the questions /// limitation 40 questions. CHECK
 
-- add additional difficulty by providing different countdown times (5 sec.  10sec. 20sec.)
-- add a more sophisticated highscore logic: *10, extra bonus for time saver, higher ranking for time saver
+- sort highscore results, highest highscore at the top --> top 10
+- add countdown --> see function countdown. 
+    When countdown stops, add the remaining seconds to the highscore.
+    10 points for correct answer + remaining seconds
+- minimize user problems --> big, small capital, data isses ----> define fix number of question: add in readme.md/features input field can be added CHECK
+
+- adjust css design --> 
+- optimize user flow --> add introduction text & add 3Sec. between questions: setTimeout('', 3000); 
+- explain limitation of local storage in readme.md
+- improve code quality --> ??
+- show steps in console console.log --> delete at the end
+- add progress/ number of question which are done
+
+- modus 1 failure
+
+Feedback
+no alerts!
+intro text (captial, countries)
+take the top 10 highest highscores
+countries, capitals can be in a separated file --! has to be loaded first
