@@ -102,8 +102,8 @@ function startQuiz() {
     highscore = 0;
 
     timeLeft = 20;
-    elem = document.getElementById('Timer');
-    timerId = setInterval(countdown, 1000);
+    // elem = document.getElementById('Timer');
+    // timerId = setInterval(countdown, 1000);
 
     countdown();
 
@@ -158,8 +158,6 @@ function displayNextQuestion() {
         console.log('displayNextQuestion');
         index++;
         timeLeft = 20;
-        elem = document.getElementById('Timer');
-        timerId = setInterval(countdown, 1000);
         countdown();
 
         console.log('start countdown');

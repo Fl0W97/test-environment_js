@@ -254,7 +254,7 @@ Here the live link: https://fl0w97.github.io/CI_p1_meditation-_website/index.htm
 - end of the game? --> add function if index > numberOfCountries --> shuffle again and continue with the questions /// limitation 40 questions. CHECK
 
 - sort highscore results, highest highscore at the top --> top 10
-- add countdown --> see function countdown. 
+- add countdown --> see function countdown. CHECK
     When countdown stops, add the remaining seconds to the highscore.
     10 points for correct answer + remaining seconds
 - minimize user problems --> big, small capital, data isses ----> define fix number of question: add in readme.md/features input field can be added CHECK
@@ -266,7 +266,8 @@ Here the live link: https://fl0w97.github.io/CI_p1_meditation-_website/index.htm
 - show steps in console console.log --> delete at the end
 - add progress/ number of question which are done
 
-- modus 1 failure
+- modus1: with failure
+- modus2: no failure
 
 Feedback
 no alerts!
