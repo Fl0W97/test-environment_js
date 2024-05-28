@@ -239,7 +239,7 @@ Here the live link: https://fl0w97.github.io/CI_p1_meditation-_website/index.htm
 ### Content
 
 - https://www.destatis.de/Europa/DE/Thema/Basistabelle/Bevoelkerung.html
-- Support in text formulating [ChatGPT](https://chat.openai.com/) 
+
 
 
 ### Code
@@ -247,3 +247,21 @@ Here the live link: https://fl0w97.github.io/CI_p1_meditation-_website/index.htm
 | Description  | Source | URL |
 | ------------- | ------------- | ------------- |
 | Generate Markdown file  | GitHUb | https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+
+
+#OPEN toDOs
+
+- end of the game? --> add function if index > numberOfCountries --> shuffle again and continue with the questions
+- sort highscore results, highest highscore at the top --> ?
+- add countdown --> see function countdown
+- add time counter for total result
+- add time to highscore (3. line) --> return [item.name, item.score, item.time].join(" ");
+- minimize user problems --> big, small capital, data isses
+- improve code quality --> ??
+- show steps in console console.log --> a sign of good or low quality!?
+- adjust css design --> 
+- optimize user flow --> add 3Sec. between questions: setTimeout('', 3000);
+- explain limitation of local storage
+
+- add additional difficulty by providing different countdown times (5 sec.  10sec. 20sec.)
+- add a more sophisticated highscore logic: *10, extra bonus for time saver, higher ranking for time saver
