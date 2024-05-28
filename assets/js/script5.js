@@ -71,7 +71,13 @@ const answer3 = document.getElementById("box3");
 
 // Highscore
 const mostRecentScore = localStorage.getItem('mostRecentScore');
-let highscore;
+let numberCorrectAnswers;
+let highscore = numberCorrectAnswers*10;
+
+// Timer
+let timeLeft = 20;
+let elem = document.getElementById('Timer');
+let timerId = setInterval(countdown, 1000);
 
 // DOM load
 document.addEventListener("DOMContentLoaded", function () {
@@ -90,9 +96,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Function to start the quiz
 function startQuiz() {
-    // Set indext and highscore locally to 0
+    // Set index and highscore locally to 0
     index = 0;
+    numberCorrectAnswers = 0;
     highscore = 0;
+
+    timeLeft = 20;
+    elem = document.getElementById('Timer');
+    timerId = setInterval(countdown, 1000);
+
+    countdown();
 
     // Manage visibility of elements
     document.getElementById('quiz_questions').style.visibility = 'inherit';
@@ -144,8 +157,15 @@ function displayNextQuestion() {
         displayQuestionAnswer();
         console.log('displayNextQuestion');
         index++;
+        timeLeft = 20;
+        elem = document.getElementById('Timer');
+        timerId = setInterval(countdown, 1000);
+        countdown();
+
+        console.log('start countdown');
         console.log('display index:' + index);
         console.log('highscore:' + highscore);
+        console.log('Number correct Answers:' + numberCorrectAnswers);
     } else {
         // No more questions left, end of the game
         gameOver();
@@ -236,12 +256,24 @@ function displayMultipleChoice() {
 function checkAnswer() {
     if (userAnswer === correctAnswer) {
         document.getElementById("feedbackForUser").innerHTML = "Correct!";
-        highscore++;
+        numberCorrectAnswers++;
+        highscore = numberCorrectAnswers*10;
         document.getElementById("highscore").innerHTML = "Highscore is: " + highscore;
         console.log('check is done.')
     } else {
         document.getElementById("feedbackForUser").innerHTML = "Incorrect! The correct answer is " + correctAnswer;
     }
+}
+
+// TIMER
+function countdown() {
+  if (timeLeft == 0) {
+    clearTimeout(timerId);
+    gameOver();
+  } else {
+    elem.innerHTML = timeLeft + ' seconds remaining';
+    timeLeft--;
+  }
 }
 
 // The game is over: Alert, add highscore to highscoreList, not working yet !!!!
@@ -252,23 +284,10 @@ function gameOver() {
     window.location.replace('/end.html');
 }
 
-function saveHighScore(e) {
+/* function calculateHighscore() {
+    highscore = highscore + timeLeft + index*10
+} */
+
+/* function saveHighScore(e) {
     console.log("clicked the save button!");
-}
-
-/* TIMER
-var timeLeft = 30;
-var elem = document.getElementById('Timer');
-
-var timerId = setInterval(countdown, 1000);
-
-function countdown() {
-  if (timeLeft == 0) {
-    clearTimeout(timerId);
-    gameOver();
-  } else {
-    elem.innerHTML = timeLeft + ' seconds remaining';
-    timeLeft--;
-  }
-}
-*/
+} */
