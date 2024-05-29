@@ -75,7 +75,7 @@ let numberCorrectAnswers;
 let highscore = numberCorrectAnswers*10;
 
 // Timer
-let timeLeft = 20;
+let timeLeft;
 let elem = document.getElementById('Timer');
 let timerId = setInterval(countdown, 1000);
 
@@ -100,12 +100,6 @@ function startQuiz() {
     index = 0;
     numberCorrectAnswers = 0;
     highscore = 0;
-
-    timeLeft = 20;
-    // elem = document.getElementById('Timer');
-    // timerId = setInterval(countdown, 1000);
-
-    countdown();
 
     // Manage visibility of elements
     document.getElementById('quiz_questions').style.visibility = 'inherit';
@@ -255,11 +249,12 @@ function checkAnswer() {
     if (userAnswer === correctAnswer) {
         document.getElementById("feedbackForUser").innerHTML = "Correct!";
         numberCorrectAnswers++;
-        highscore = numberCorrectAnswers*10;
+        highscore = numberCorrectAnswers*10 + timeLeft;
         document.getElementById("highscore").innerHTML = "Highscore is: " + highscore;
-        console.log('check is done.')
+        console.log('check is done.');
+        console.log('Show time left:' + timeLeft);
     } else {
-        document.getElementById("feedbackForUser").innerHTML = "Incorrect! The correct answer is " + correctAnswer;
+        document.getElementById("feedbackForUser").innerHTML = "Incorrect!!! The correct answer is " + correctAnswer;
     }
 }
 
