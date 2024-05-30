@@ -256,7 +256,7 @@ Here the live link: https://fl0w97.github.io/CI_p1_meditation-_website/index.htm
 - sort highscore results, highest highscore at the top --> top 10
 - add countdown --> see function countdown. CHECK
     When countdown stops, add the remaining seconds to the highscore.
-    10 points for correct answer + remaining seconds
+    10 points for correct answer + remaining seconds CHECK
 - minimize user problems --> big, small capital, data isses ----> define fix number of question: add in readme.md/features input field can be added CHECK
 
 - adjust css design --> 
@@ -265,6 +265,7 @@ Here the live link: https://fl0w97.github.io/CI_p1_meditation-_website/index.htm
 - improve code quality --> ??
 - show steps in console console.log --> delete at the end
 - add progress/ number of question which are done
+- shift the country database to another js file  
 
 - modus1: with failure
 - modus2: no failure

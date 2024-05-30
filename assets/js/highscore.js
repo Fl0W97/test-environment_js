@@ -1,8 +1,6 @@
 // DOM load
 document.addEventListener("DOMContentLoaded", function () {
     const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
-    console.log(highScores);
-
 
     // reused code: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
     
@@ -13,11 +11,18 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // create for each entry one list element
     function createList() {
+      highScores.sort(function(x, y) {
+        return y.score - x.score;
+      });
+
+      highScores.splice(10);
+      console.log(highScores);
+
         document.getElementById('highScoreList').innerHTML = highScores.map((highScore) => {
-          return `<li>${ getNameScore(highScore) }</li>`;
+          return `<li class='highscore'>${ getNameScore(highScore) }</li>`;
         }).join('');
     }
-    
+
     createList();
     
 });
