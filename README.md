@@ -6,10 +6,25 @@ Welcome to my second project, the Europe quiz website is a landing page for peop
 
 ## Features
 
+| Feature name  | Description | location |
+| ------------- | ------------- | ------------- |
+| navigation  |  | |
+| local storage  | Is limited.Only browser infomration are storage. THerefore, users cannot compare highscore with other users which use a different browser. In addition, it is possible to manipulate the localStorage | |
+| shuffle  |  | |
+| switch | Decide What is asked capital or country | |
+| provideQuestion |  | |
+| checkAnswer  |  | |
+| displayAnswer  | Answer Capital or Country | |
+| checkAnswer  |  | |
+| multiply choice  |  | |
+| countdown  |  | |
+| eventListener  |  | |
+
+
 ### Navigation
 
-The user is able to navigate on the navigation bar. The quiz is the most prominent featuere therefor, it appears already on the landing apge.
-There are three navigation elements according to the three pages Quiz, Highscore and About. Due to responsive design requiremets the behaviour and position of the navigation bar is slightly different.
+The user is able to navigate on the navigation bar. The quiz is the most prominent featuere therefore, it appears already on the landing page.
+There are two navigation elements, Highscore and About. Due to responsive design requiremets the behaviour and position of the navigation bar is slightly different.
 
 Mobile view: Elements are aligned to the center. burger tab is not used.
 s
@@ -57,6 +72,9 @@ end.html
 
 ### The Footer
 The footer contains a link to the creator's GitHub and Linkedin link. 
+
+### Feature ideas for next release
+
 
 
 ## UX Design
@@ -171,7 +189,8 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
 
-Here the live link: https://fl0w97.github.io/CI_p1_meditation-_website/index.html
+Here the live link: https://fl0w97.github.io/ci-p2-europe-quiz/
+
 
 <details>
     <summary>Cloning repository</summary>
@@ -263,17 +282,18 @@ Here the live link: https://fl0w97.github.io/CI_p1_meditation-_website/index.htm
 - adjust css design --> 
 - optimize user flow --> add introduction text & add 3Sec. between questions: setTimeout('', 3000); 
 - explain limitation of local storage in readme.md. High score can be manipulated 
-- improve code quality --> ??
+- improve code quality --> ?? 
 - show steps in console console.log --> delete at the end
 - add progress/ number of question which are done CHECK
 - add dialog box instead of alert CHECK
 - shift the country database to another js file  
+- make sure that username is added --> make the save button unsuable
 
 - modus1: with failure
 - modus2: no failure
 
 Feedback
 no alerts! CHECK
-intro text (captial, countries)
+intro text (captial, countries) CHECK
 take the top 10 highest highscores CHECK
 countries, capitals can be in a separated file --! has to be loaded first

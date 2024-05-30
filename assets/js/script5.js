@@ -1,4 +1,5 @@
 // Country-capital database as a nested list
+// Country-capital database as a nested list
 const CountriesCapitals = [
     { country: "Albania", capital: "Tirana" },
     { country: "Andorra", capital: "Andorra la Vella" },
@@ -142,6 +143,10 @@ function handleUserAnswer(answer) {
     userAnswer = answer;
     checkAnswer();
     // After checking the answer, proceed to the next question
+    let timeout;
+
+    //timeout = setTimeout(displayNextQuestion, 3000);
+    
     displayNextQuestion();
 }
 
@@ -288,11 +293,17 @@ function gameOver() {
     window.location.replace('/end.html');
     });
     
-    
-    // alert('The game is over. Your highscore is: ' + highscore);
-    
     localStorage.setItem("mostRecentScore", highscore);
     
 }
 
+/*
+let timeout;
 
+function myFunction() {
+  timeout = setTimeout(alertFunc, 3000);
+}
+
+function alertFunc() {
+  alert("Hello!");
+} */

@@ -230,10 +230,11 @@ dialog::backdrop {
 
 .dialogbox {
     position: fixed;
-    top: 40%;
+    top: 50%;
     left: 50%;
+    margin: 15px;
     background-color: white;
-    border: 2px solid silver;
+    border: 3px solid silver;
 }
 
 /* Footer */
