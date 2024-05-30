@@ -258,22 +258,22 @@ Here the live link: https://fl0w97.github.io/CI_p1_meditation-_website/index.htm
     When countdown stops, add the remaining seconds to the highscore. CHECK
     10 points for correct answer + remaining seconds CHECK
 - minimize user problems --> big, small capital, data isses ----> define fix number of question: add in readme.md/features input field can be added CHECK
-- undo save button, when highscore is saved
+- undo save button, when highscore is saved CHECK
 
 - adjust css design --> 
 - optimize user flow --> add introduction text & add 3Sec. between questions: setTimeout('', 3000); 
 - explain limitation of local storage in readme.md. High score can be manipulated 
 - improve code quality --> ??
 - show steps in console console.log --> delete at the end
-- add progress/ number of question which are done
-- add dialog box instead of alert
+- add progress/ number of question which are done CHECK
+- add dialog box instead of alert CHECK
 - shift the country database to another js file  
 
 - modus1: with failure
 - modus2: no failure
 
 Feedback
-no alerts!
+no alerts! CHECK
 intro text (captial, countries)
-take the top 10 highest highscores
+take the top 10 highest highscores CHECK
 countries, capitals can be in a separated file --! has to be loaded first
