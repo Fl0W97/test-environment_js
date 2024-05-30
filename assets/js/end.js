@@ -44,5 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Optional: Clear the username input after saving
         usernameInput.value = "";
+
+        // go back to the beginning
+        window.location.replace('/index.html');
     }
 });

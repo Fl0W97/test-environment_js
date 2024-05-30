@@ -72,7 +72,7 @@ const answer3 = document.getElementById("box3");
 // Highscore
 const mostRecentScore = localStorage.getItem('mostRecentScore');
 let numberCorrectAnswers;
-let highscore = numberCorrectAnswers*10;
+let highscore;
 
 // Timer
 let timeLeft;
@@ -99,7 +99,7 @@ function startQuiz() {
     // Set index and highscore locally to 0
     index = 0;
     numberCorrectAnswers = 0;
-    highscore = 0;
+    highscore = numberCorrectAnswers*10;
 
     // Manage visibility of elements
     document.getElementById('quiz_questions').style.visibility = 'inherit';
@@ -111,8 +111,8 @@ function startQuiz() {
 
     // Settings
     saveModeSettings();
-    console.log('switch is set to' + modeTypeQuestion);
-    console.log('total number of questions is' + totalNumberQuestions);
+    console.log('switch is set to ' + modeTypeQuestion);
+    console.log('total number of questions is ' + totalNumberQuestions);
 
     // Display questions
     displayNextQuestion();
@@ -148,6 +148,7 @@ function handleUserAnswer(answer) {
 // Function to display the next question or end the quiz if all questions have been answered
 function displayNextQuestion() {
     if (index < totalNumberQuestions) {
+        document.getElementById("numberOfQuestion").innerHTML = index + " / " + totalNumberQuestions;
         displayQuestionAnswer();
         console.log('displayNextQuestion');
         index++;
@@ -249,7 +250,7 @@ function checkAnswer() {
     if (userAnswer === correctAnswer) {
         document.getElementById("feedbackForUser").innerHTML = "Correct!";
         numberCorrectAnswers++;
-        highscore = numberCorrectAnswers*10 + timeLeft;
+        highscore = highscore + timeLeft + 10;
         document.getElementById("highscore").innerHTML = "Highscore is: " + highscore;
         console.log('check is done.');
         console.log('Show time left:' + timeLeft);
@@ -272,15 +273,26 @@ function countdown() {
 // The game is over: Alert, add highscore to highscoreList, not working yet !!!!
 function gameOver() {
     console.log('highscore is: ' + highscore);
-    alert('The game is over. Your highscore is: ' + highscore);
-    localStorage.setItem("mostRecentScore", highscore);
+
+    document.getElementById("numberOfQuestion").innerHTML = index + " / " + totalNumberQuestions;
+    timeLeft = 0;
+
+    // dailog element html
+    const closeButton = document.querySelector("[data-close-modal]");
+    const modal = document.querySelector("[data-modal");
+
+    modal.showModal();
+
+    closeButton.addEventListener("click", () => {
+    modal.close();
     window.location.replace('/end.html');
+    });
+    
+    
+    // alert('The game is over. Your highscore is: ' + highscore);
+    
+    localStorage.setItem("mostRecentScore", highscore);
+    
 }
 
-/* function calculateHighscore() {
-    highscore = highscore + timeLeft + index*10
-} */
 
-/* function saveHighScore(e) {
-    console.log("clicked the save button!");
-} */

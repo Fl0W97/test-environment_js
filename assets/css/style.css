@@ -221,6 +221,10 @@ main {
     font-weight: bold;
 }
 
+/* Dialog box */
+dialog::backdrop {
+    background-color: hsl(200, 100%, 50%, 0.5);
+}
 
 /* Footer */
 footer {
