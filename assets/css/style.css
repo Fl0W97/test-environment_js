@@ -99,7 +99,7 @@ main {
     width: 90%;
     padding: 20px;
     background-color: rgba(255, 255, 255, .8);
-    text-align: center;
+    text-align: left;
 }
 
 
@@ -221,6 +221,20 @@ main {
     font-weight: bold;
 }
 
+#quiz_settings {
+    position: fixed;
+    padding: 5px;
+    left: 50%;
+    transform: translate(-50%, 10%);
+}
+
+#quiz_questions {
+    position: fixed;
+    padding: 5px;
+    left: 50%;
+    transform: translate(-50%, 10%);
+}
+
 /* Dialog box */
 dialog::backdrop {
     background-color: hsl(200, 100%, 50%, 0.5);
@@ -235,6 +249,10 @@ dialog::backdrop {
     margin: 15px;
     background-color: white;
     border: 3px solid silver;
+}
+
+#input_username {
+    padding-top: 25px;
 }
 
 /* Footer */
@@ -282,6 +300,13 @@ footer {
         margin-top: 93px;
     }
 
+    .section_style {
+        margin: auto;
+        width: 40%;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, .8);
+        text-align: center;
+    }
 
     #box_questions {
         flex-direction: column;

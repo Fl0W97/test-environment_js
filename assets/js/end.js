@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const finalScore = document.getElementById('finalScore');
     const mostRecentScore = localStorage.getItem('mostRecentScore');
 
+    usernameInput.addEventListener('input', () => {
+        saveScoreButton.disabled = !usernameInput.value.trim();
+    });
+
+    saveScoreButton.addEventListener('click', saveHighScore);
+
     // create a list with score and name in local storage
     const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
@@ -17,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         finalScore.innerText = 'No score available';
     }
 
-    saveScoreButton.addEventListener('click', saveHighScore);
+    
 
     function saveHighScore(event) {
         event.preventDefault(); // Prevent the form from submitting if it's inside a form

@@ -181,6 +181,7 @@ function handleUserInput(userInput) {
 function saveModeSettings() {
     // Get the checkbox
     var checkBoxQ = document.getElementById('CheckboxQuestion');
+    var checkBoxN = document.getElementById('CheckboxNumber');
 
     // Show the status of the checkbox
     if (checkBoxQ.checked == true) {
@@ -189,6 +190,15 @@ function saveModeSettings() {
     } else {
         console.log('Question checkbox is unchecked');
         modeTypeQuestion = "country";
+    }
+
+    // Define number of questions
+    if (checkBoxN.checked == true) {
+        console.log('Number checkbox is checked');
+        totalNumberQuestions = 4;
+    } else {
+        console.log('Number checkbox is unchecked');
+        totalNumberQuestions = 2;
     }
 }
 

@@ -44,14 +44,31 @@
             <h2>
                 Welcome to the Europe Capitals Quiz!
             </h2>
-                <div>
-                    <p>Capital --- Country</p>
-                    <!-- switch -->
-                    <label class="switch" for="CheckboxQuestion">
-                        <input type="checkbox" id="CheckboxQuestion" name="CheckboxQuestion">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
+            <p>
+                Test your knowledge of European capitals. Answer 40 multiple-choice questions,
+                earn 10 points for each correct answer, and score bonus points for every second you save. Speed and
+                accuracy are key.
+            </p>
+            <p>
+                Switch it up with our toggle function to choose between identifying capitals or countries.
+                Ready to show off your skills? Let’s get started! Good luck!
+            </p>
+            <div>
+                <p>Capital --- Country</p>
+                <!-- switch -->
+                <label class="switch" for="CheckboxQuestion">
+                    <input type="checkbox" id="CheckboxQuestion" name="CheckboxQuestion">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div>
+                <p>Number of Questions</p>
+                <!-- switch -->
+                <label class="switch" for="CheckboxNumber">
+                    <input type="checkbox" id="CheckboxNumber" name="CheckboxNumber">
+                    <span class="slider round"></span>
+                </label>
+            </div>
             </div>
             <div>
                 <button type="button" id="button">Start Quiz</button>
@@ -81,7 +98,7 @@
             <div>
                 <dialog data-modal class="dialogbox">
                     <div>The game is over.</div>
-                    <button data-close-modal>Ok ok</button>
+                    <button data-close-modal>Ok</button>
                 </dialog>
             </div>
         </section>
