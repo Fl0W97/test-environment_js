@@ -1,5 +1,7 @@
 /* Google fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');*/
+
+@import url('@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');');
 
 /* Asterisk wildcard selector to override default styles added by the browser */
 * {
@@ -41,6 +43,10 @@ h1 {
     color: #252525;
     text-align: center;
     padding-bottom: 14px;
+}
+
+h2 {
+    padding-bottom: 20px;
 }
 
 p {
@@ -97,12 +103,13 @@ main {
 .section_style {
     margin: auto;
     width: 90%;
-    padding: 50px 20px 20px 20px;
+    padding: 35px 20px 20px 20px;
     background-color: rgba(255, 255, 255, .85);
     text-align: center;
 }
 
 .inner_section_style {
+    max-width: 600px;
     margin: auto;
     padding: 20px 10px 10px 10px;
     text-align: center;
@@ -215,14 +222,32 @@ main {
     font-size: 100%;
 }
 
+.btn2 {
+    width: 120px;
+    margin: auto;
+    background-color: #79c9e7;
+    padding: 10px;
+    border: 3px solid #cccccc;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 103%;
+}
+
 .btn a {
     text-decoration: none;
     color: #252525;
 }
 
 .btn:hover {
-    border: 3px solid #0f9d58;
+    border: 3px solid #2196f3;
     font-size: 105%;
+    font-weight: bold;
+}
+
+.btn2:hover {
+    border: 3px solid #2196f3;
+    font-size: 103%;
     font-weight: bold;
 }
 
@@ -261,10 +286,10 @@ dialog::backdrop {
 }
 
 .dialogbox {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin: 15px;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    padding: 15px;
     background-color: white;
     border: 3px solid silver;
 }
@@ -305,7 +330,7 @@ footer {
     .menu {
         /* push menu elemets to the left  */
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .menu li a {
@@ -355,9 +380,6 @@ footer {
     
     .menu li a:hover {
         color: #0f9d58;
-        padding-left: 5px;
-        border-left: 5px solid #0f9d58;
-        font-weight: bold;
-    }
-
+        border-bottom: 1px solid #c0643d;
+    } 
  }

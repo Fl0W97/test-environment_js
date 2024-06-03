@@ -53,7 +53,7 @@ const CountriesCapitals = [
 ];
 
 // Total number of question is defined and not changeable for the user
-let totalNumberQuestions = 5;
+let totalNumberQuestions;
 
 // Boxes for hide/display
 let box_answers = document.getElementById("box_answers");
@@ -195,10 +195,10 @@ function saveModeSettings() {
     // Define number of questions
     if (checkBoxN.checked == true) {
         console.log('Number checkbox is checked');
-        totalNumberQuestions = 4;
+        totalNumberQuestions = 40;
     } else {
         console.log('Number checkbox is unchecked');
-        totalNumberQuestions = 2;
+        totalNumberQuestions = 20;
     }
 }
 
@@ -304,7 +304,6 @@ function gameOver() {
     });
     
     localStorage.setItem("mostRecentScore", highscore);
-    
 }
 
 /*
