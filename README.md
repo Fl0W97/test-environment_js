@@ -220,7 +220,8 @@ Here the live link: https://fl0w97.github.io/ci-p2-europe-quiz/
 - Gitpod used for local IDE for development
 - [Balsamiq](https://balsamiq.com/wireframes/desktop) used for creating Wireframes
 - [Color generator](http://colormind.io/) used for choosing the correct HEX code
-- [Favicon.io](https://favicon.io/) used to create the favicon
+- [Favicon.io](https://favicon.io/) used to create the favicon 
+    https://favicon.io/emoji-favicons/globe-showing-europe-africa/
 - [Google Fonts](https://fonts.google.com/) used to search a suitable font and using it
 - [Font Awesome](https://fontawesome.com/) used for logo designs (Linkedin, Youtube and GitHub)
 - [Tinypng](https://tinypng.com/) used for reducing image size
@@ -229,6 +230,7 @@ Here the live link: https://fl0w97.github.io/ci-p2-europe-quiz/
 ## Credits
 
 ### Media
+https://www.freepik.com/icon/quiz_5677910#fromView=search&page=1&position=0&uuid=bb27b382-d0ad-435a-80ce-5a532b012a55
 
 <details>
     <summary>icons/ illustrations and images used from [Freepik.com ](https://www.freepik.com/) and [Picjumbo.com](https://picjumbo.com/)</summary>
@@ -280,7 +282,7 @@ Here the live link: https://fl0w97.github.io/ci-p2-europe-quiz/
 - undo save button, when highscore is saved CHECK
 
 - adjust css design --> 
-- optimize user flow --> add introduction text & add 3Sec. between questions: setTimeout('', 3000); 
+- optimize user flow --> add introduction text & add 3Sec. between questions: setTimeout('', 3000); NO
 - explain limitation of local storage in readme.md. High score can be manipulated 
 - improve code quality --> ?? 
 - show steps in console console.log --> delete at the end
@@ -296,4 +298,9 @@ Feedback
 no alerts! CHECK
 intro text (captial, countries) CHECK
 take the top 10 highest highscores CHECK
+
 countries, capitals can be in a separated file --! has to be loaded first
+
+
+how to separate database in another file?
+

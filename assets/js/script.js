@@ -142,10 +142,6 @@ function clickAnswer(event) {
 function handleUserAnswer(answer) {
     userAnswer = answer;
     checkAnswer();
-    // After checking the answer, proceed to the next question
-    let timeout;
-
-    //timeout = setTimeout(displayNextQuestion, 3000);
     
     displayNextQuestion();
 }
@@ -280,7 +276,7 @@ function countdown() {
     clearTimeout(timerId);
     gameOver();
   } else {
-    elem.innerHTML = timeLeft + ' seconds remaining';
+    elem.innerHTML = timeLeft + ' seconds remaining...';
     timeLeft--;
   }
 }
